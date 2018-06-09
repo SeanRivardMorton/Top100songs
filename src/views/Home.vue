@@ -15,6 +15,7 @@ export default class Home extends Vue {
   @Action('setTopSongs') setTopSongs!: null;
 
   created() {
+    // Load in the top songs
     this.setTopSongs();
   }
 }
