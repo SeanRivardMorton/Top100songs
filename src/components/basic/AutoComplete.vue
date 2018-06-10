@@ -2,7 +2,7 @@
     <v-container fluid>
         <v-layout row wrap>
             <v-flex xs12>
-                <v-select :items="items" v-model="autoComplete" label="Select" autocomplete></v-select>
+                <v-select color="red" :items="items" item-text="title.label" v-model="autoComplete" :label="selectLabel" return-object autocomplete @input="update()"></v-select>
             </v-flex>
         </v-layout>
     </v-container>
@@ -10,11 +10,19 @@
 
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator';
+import { Action } from 'vuex-class';
 
 @Component({})
 export default class AutoComplete extends Vue {
-    @Prop() items!: string;
+    selectLabel: string = 'Search the top 100 songs on itunes'
     autoComplete = null;
+    @Prop() items!: Array<string>;
+    @Action('setSong') setSong!: null;
+
+
+    update() {
+        this.setSong(this.autoComplete);
+    }
 }
 </script>
 
