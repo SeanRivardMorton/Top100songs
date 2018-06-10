@@ -2,7 +2,6 @@
     <v-layout>
         <v-flex class="list__container">
             <v-card flat color="transparent" v-for="song in topSongs" :key="song.songId" class="mb-1 mt-1">
-                <!-- <song-tile :song="song"></song-tile> -->
                 <active-song :activeSong="song"></active-song>
             </v-card>
         </v-flex>
@@ -11,12 +10,10 @@
 
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator'
-import SongTile from '@/components/SongList/SongTile.vue'
 import ActiveSong from '@/components/ActiveSong/ActiveSong.vue'
 
 @Component({
     components: {
-        SongTile,
         ActiveSong
     }
 })

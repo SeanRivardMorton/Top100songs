@@ -5,7 +5,6 @@
                 <song-artwork :songArtwork="songArtwork"></song-artwork>
             </v-flex>
             <v-flex xs8>
-                <!-- <span class="body-2 ml-3 pt-2 pb-0">Song</span> -->
                 <v-card-title class="title pt-4 pb-1">{{activeSong['im:name'].label}}</v-card-title>
                 <span class="body-1 ml-4 pt-2">
                     By
@@ -22,6 +21,7 @@
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator';
 import SongArtwork from '@/components/ActiveSong/SongArtwork.vue';
+import last from 'lodash/last';
 
 @Component({
     components: {
@@ -32,7 +32,7 @@ export default class ActiveSong extends Vue {
     @Prop() activeSong!: any;
 
     get songArtwork() {
-        return this.activeSong['im:image'][2].label ;
+        return last(this.activeSong['im:image']).label ;
     }
 
 }
