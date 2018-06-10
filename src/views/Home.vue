@@ -1,10 +1,8 @@
 <template>
   <v-layout justify-center>
     <v-flex xs12 lg6>
-      <v-card>
-        <!-- <auto-complete :items="SongNames"></auto-complete> -->
-        <song-tile :item="{songName:'Come Tomorrow', songArtist:'Dave Matthews Band'}"></song-tile>
-      </v-card>
+      <!-- <auto-complete :items="SongNames"></auto-complete> -->
+      <song-list></song-list>
     </v-flex>
   </v-layout>
 </template>
@@ -13,12 +11,12 @@
 import { Component, Vue } from 'vue-property-decorator';
 import { Getter, Action } from 'vuex-class';
 import AutoComplete from '@/components/basic/AutoComplete.vue'
-import SongTile from '@/components/SongList/SongTile.vue'
+import SongList from '@/components/SongList/SongList.vue'
 
 @Component({
   components: {
     AutoComplete,
-    SongTile
+    SongList
   }
 })
 export default class Home extends Vue {
