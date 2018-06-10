@@ -25,7 +25,7 @@ export default class Home extends Vue {
   miniVariant: boolean = false;
   right: boolean = false;
   rightDrawer: boolean = false;
-  title: string = 'itunes Top 100';
+  title: string = 'itunes top 100';
 
   get drawerProperties() {
     return {
