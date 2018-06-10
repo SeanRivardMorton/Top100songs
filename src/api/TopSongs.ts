@@ -1,4 +1,4 @@
-import API from '@/assets/api/apiClient';
+import API from '@/api/apiClient';
 
 const endpoint = 'us/rss/topalbums/limit=100/json';
 

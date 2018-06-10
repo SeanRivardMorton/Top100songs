@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import topSongs from '@/assets/api/TopSongs';
+import topSongs from '@/api/TopSongs';
 
 Vue.use(Vuex);
 
