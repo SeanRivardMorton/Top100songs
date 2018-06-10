@@ -1,28 +1,34 @@
 <template>
   <div id="app">
-    <router-view/>
+    <v-app dark>
+      <v-content>
+        <v-container>
+          <router-view/>
+        </v-container>
+      </v-content>
+    </v-app>
   </div>
 </template>
 
-<style lang="stylus">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
 
-#nav {
-  padding: 30px;
+@Component({})
+export default class Home extends Vue {
+  clipped: boolean = false;
+  drawer: boolean = true;
+  fixed: boolean = false;
+  miniVariant: boolean = false;
+  right: boolean = false;
+  rightDrawer: boolean = false;
+  title: string = 'CopoFi Submission';
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+  get drawerProperties() {
+    return {
+      drawer: this.drawer,
+      miniVariant: this.miniVariant,
+      clipped: this.clipped
     }
   }
 }
-</style>
+</script>
