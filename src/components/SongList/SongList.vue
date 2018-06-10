@@ -19,7 +19,7 @@ import ActiveSong from '@/components/ActiveSong/ActiveSong.vue'
 })
 export default class SongList extends Vue {
     @Prop() songs!: Array<any>
-    songLimit: number = 10;
+    songLimit: number = 100;
 
     get topSongs() {
         return this.songs.slice(0, this.songLimit);
