@@ -1,6 +1,6 @@
 <template>
     <v-layout>
-        <v-flex>
+        <v-flex class="list__container">
             <v-card flat color="transparent" v-for="song in topSongs" :key="song.songId" class="mb-1 mt-1">
                 <song-tile :song="song"></song-tile>
             </v-card>
@@ -28,3 +28,10 @@ export default class SongList extends Vue {
 }
 
 </script>
+
+<style lang="scss" scoped>
+.list__container {
+  max-height: 90vh;
+  overflow: auto;
+}
+</style>
