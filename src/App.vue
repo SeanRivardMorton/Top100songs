@@ -2,7 +2,7 @@
   <div id="app">
     <v-app dark>
       <v-toolbar fixed app :clipped-left="clipped">
-        <v-toolbar-side-icon color="red" @click="drawer = !drawer"></v-toolbar-side-icon>
+        <v-icon color="red">music_note</v-icon>
         <v-toolbar-title v-text="title"></v-toolbar-title>
       </v-toolbar>
       <v-content>
