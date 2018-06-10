@@ -9,9 +9,9 @@
             <v-layout column>
                 <v-flex xs12>
                     <v-card flat>
-                        <v-card-title class="title">{{item.songArtist }}</v-card-title>
+                        <v-card-title class="title">{{ song['im:name'].label }}</v-card-title>
                         <v-divider/>
-                        <v-card-title class="subheader">{{ item.songName }}</v-card-title>
+                        <v-card-title class="subheader">{{song['im:artist'].label }}</v-card-title>
                     </v-card>
                 </v-flex>
             </v-layout>
@@ -24,7 +24,7 @@
 
     @Component({})
     export default class SongTile extends Vue {
-        @Prop() item!: { songName: string, songArtist: string };
+        @Prop() song!: any;
     }
 
 </script>

@@ -1,8 +1,8 @@
 <template>
     <v-layout>
         <v-flex>
-            <v-card flat color="transparent" v-for="n in 5" :key="n.id" class="mb-1 mt-1">
-                <song-tile :item="{songName:'Come Tomorrow', songArtist:'Dave Matthews Band'}"></song-tile>
+            <v-card flat color="transparent" v-for="song in topSongs" :key="song.songId" class="mb-1 mt-1">
+                <song-tile :song="song"></song-tile>
             </v-card>
         </v-flex>
     </v-layout>
@@ -18,7 +18,13 @@ import SongTile from '@/components/SongList/SongTile.vue'
     }
 })
 export default class SongList extends Vue {
-    @Prop() songList!: Array<any>
+    @Prop() songs!: Array<any>
+    songLimit: number = 10;
+
+    get topSongs() {
+        return this.songs.slice(0, this.songLimit);
+    }
+
 }
 
 </script>
