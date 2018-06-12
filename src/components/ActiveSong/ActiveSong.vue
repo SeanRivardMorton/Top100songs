@@ -23,16 +23,24 @@ import { Component, Vue, Prop } from 'vue-property-decorator';
 import SongArtwork from '@/components/ActiveSong/SongArtwork.vue';
 import last from 'lodash/last';
 
+interface songImage {
+    label: string,
+    attributes: {
+        height: number
+    },
+}
+
 @Component({
     components: {
         SongArtwork
     }
 })
 export default class ActiveSong extends Vue {
-    @Prop() activeSong!: any;
+    @Prop({ default: {}}) activeSong!: any;
 
     get songArtwork() {
-        return last(this.activeSong['im:image']).label ;
+        const songImage: any = last(this.activeSong['im:image']);
+        return songImage.label;
     }
 
 }

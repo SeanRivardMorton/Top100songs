@@ -25,7 +25,7 @@ export default class Home extends Vue {
   title: string = 'Search Songs';
   @Getter('topSongs') topSongs!: any;
   @Getter('song') song!: any;
-  @Action('setTopSongs') setTopSongs!: null;
+  @Action('setTopSongs') setTopSongs!: Function;
   items = [1,2,3,4]
 
   get activeSong() {
@@ -33,7 +33,7 @@ export default class Home extends Vue {
   }
 
   get songNames() {
-    return this.topSongs ? this.topSongs.feed.entry.map( item => item.title.label ) : []
+    return this.topSongs ? this.topSongs.feed.entry.map( (item: any) => item.title.label ) : []
   }
 
   // return an empty array if the API has not returned with its query.

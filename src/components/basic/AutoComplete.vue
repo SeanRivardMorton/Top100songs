@@ -15,9 +15,10 @@ import { Action } from 'vuex-class';
 @Component({})
 export default class AutoComplete extends Vue {
     selectLabel: string = 'Search the top 100 songs on itunes'
-    autoComplete = null;
+    autoComplete: any = null;
+
     @Prop() items!: Array<string>;
-    @Action('setSong') setSong!: null;
+    @Action('setSong') setSong!: Function;
 
 
     update() {
